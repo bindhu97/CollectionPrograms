@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionPrograms
@@ -10,12 +11,13 @@ namespace CollectionPrograms
             Console.WriteLine("Welcome to C# Collections");
             //doListDemo();
             //doStackDemo();
-            doDictionaryDemo();
+            //doDictionaryDemo();
+            doSetDemo();
         }
         private static void doListDemo()
         {
             Console.WriteLine("\nIn doListDemo");
-            List <string> list = new List<string>();
+            List<string> list = new List<string>();
             list.Add("Arun");
             list.Add("Surya");
             list.Add("Parnika");
@@ -55,6 +57,21 @@ namespace CollectionPrograms
             foreach (var element in dictionary)
             {
                 Console.WriteLine("Key =" + element.Key + "& value =" + element.Value);
+            }
+        }
+        private static void doSetDemo()
+        {
+            Console.WriteLine("\nIn doSetDemo");
+            var set = new HashSet<string>();
+            set.Add("Ravi");
+            set.Add("Vijay");
+            set.Add("Pavitra");
+            set.Add("Shiva");
+
+            HashSet<string>.Enumerator enumerator = set.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
             }
         }
     }
