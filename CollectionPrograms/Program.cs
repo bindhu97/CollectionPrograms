@@ -12,7 +12,8 @@ namespace CollectionPrograms
             //doListDemo();
             //doStackDemo();
             //doDictionaryDemo();
-            doSetDemo();
+            //doSetDemo();
+            doQueueDemo();
         }
         private static void doListDemo()
         {
@@ -69,6 +70,32 @@ namespace CollectionPrograms
             set.Add("Shiva");
 
             HashSet<string>.Enumerator enumerator = set.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
+        }
+        private static void doQueueDemo()
+        {
+            Console.WriteLine("\nIn doQueueDemo");
+
+            Queue<string>queue = new Queue<string>();
+            queue.Enqueue("Bindhu Shree");
+            queue.Enqueue("Sunil Kumar");
+            queue.Enqueue("Asha Rani");
+            queue.Enqueue("Raju");
+            Console.WriteLine("Head:" + queue.Peek());
+            Console.WriteLine("\nIterating the queue elements: ");
+
+            foreach (var element in queue)
+            {
+                Console.WriteLine(element);
+            }
+            string dequeue = queue.Dequeue();
+            Console.WriteLine("Dequeue element: " + dequeue);
+            Console.WriteLine("\nIterating the queue elements after dequeue one element: ");
+            
+            Queue<string>.Enumerator enumerator = queue.GetEnumerator();
             while (enumerator.MoveNext())
             {
                 Console.WriteLine(enumerator.Current);
