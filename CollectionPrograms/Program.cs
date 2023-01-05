@@ -8,7 +8,8 @@ namespace CollectionPrograms
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to C# Collections");
-            doListDemo();
+            //doListDemo();
+            doStackDemo();
         }
         private static void doListDemo()
         {
@@ -23,6 +24,22 @@ namespace CollectionPrograms
             {
                 Console.WriteLine(element);
             }
+        }
+        private static void doStackDemo()
+        {
+            Console.WriteLine("\nIn doStackDemo");
+            Stack<string> stack = new Stack<string>();
+            stack.Push("Ravi");
+            stack.Push("Vijay");
+            stack.Push("Pavitra");
+            stack.Push("Shiva");
+            string pop = stack.Pop();
+
+            foreach (var element in stack)
+            {
+                Console.WriteLine(element);
+            }
+            Console.WriteLine("Popped element: " + pop);
         }
     }
 }
